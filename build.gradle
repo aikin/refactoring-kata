@@ -1,0 +1,24 @@
+
+allprojects {
+    version = '1.0.0'
+    apply plugin: "idea"
+    apply plugin: "java"
+}
+
+
+subprojects {
+    sourceCompatibility = 1.8
+
+    repositories {
+        jcenter()
+    }
+
+    ext {
+        junitVersion = "4.12"
+    }
+
+    dependencies {
+        testCompile "junit:junit:$junitVersion"
+    }
+}
+
