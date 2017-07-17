@@ -15,22 +15,46 @@ public class RemoteControl {
 
     public void on(int slot) {
         if (slot == 1)
-            light.on();
+            lightOn();
         if (slot == 2)
-            ceiling.high();
+            ceilingHigh();
         if (slot == 3) {
-            stereo.on();
+            stereoOn();
             stereo.setCdStatus(true);
             stereo.setVolume(11);
         }
     }
 
+    private void stereoOn() {
+        new StereoOnCommand(stereo).on();
+    }
+
+    private void ceilingHigh() {
+        new CeilingHighCommand(ceiling).high();
+    }
+
+    private void lightOn() {
+        new LightOnCommand(light).on();
+    }
+
     public void off(int slot) {
         if (slot == 1)
-            light.off();
+            lightOff();
         if (slot == 2)
-            ceiling.off();
+            ceilingOff();
         if (slot == 3)
-            stereo.off();
+            stereoOff();
+    }
+
+    private void stereoOff() {
+        new StereoOffCommand(stereo).off();
+    }
+
+    private void ceilingOff() {
+        new CeilingOffCommand(ceiling).off();
+    }
+
+    private void lightOff() {
+        new LightOffCommand(light).off();
     }
 }
