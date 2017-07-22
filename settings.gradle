@@ -1,3 +1,4 @@
 rootProject.name = 'java-refactor-training'
 include 'command-pattern'
+include 'observer-pattern'
 
