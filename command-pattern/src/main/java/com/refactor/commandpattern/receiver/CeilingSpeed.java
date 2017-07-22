@@ -1,4 +1,4 @@
-package com.refactor.commandpattern;
+package com.refactor.commandpattern.receiver;
 
 public enum CeilingSpeed {
     High,

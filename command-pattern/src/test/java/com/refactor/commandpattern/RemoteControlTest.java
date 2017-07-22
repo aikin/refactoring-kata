@@ -1,5 +1,10 @@
 package com.refactor.commandpattern;
 
+import com.refactor.commandpattern.Invoker.RemoteControl;
+import com.refactor.commandpattern.receiver.Ceiling;
+import com.refactor.commandpattern.receiver.CeilingSpeed;
+import com.refactor.commandpattern.receiver.Light;
+import com.refactor.commandpattern.receiver.Stereo;
 import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
