@@ -13,13 +13,13 @@ public class WeatherData {
 
     public void measurementsChanged(int temp, int humidity, int windPower) {
         if (temp > 5) {
-            seedingMachine.Start();
+            seedingMachine.start();
 
             if (humidity > 65)
-                reapingMachine.Start();
+                reapingMachine.start();
         }
 
         if (temp > 10 && humidity < 55 && windPower < 4)
-            wateringMachine.Start();
+            wateringMachine.start();
     }
 }
