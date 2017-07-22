@@ -1,4 +1,4 @@
-package com.refactor.commandpattern.receiver;
+package com.refactor.commandpattern;
 
 public class Stereo {
     private boolean stereoStatus;
