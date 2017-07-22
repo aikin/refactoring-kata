@@ -1,8 +1,12 @@
 package com.refactor.observerpattern;
 
+import com.refactor.observerpattern.observer.IMachineObserver;
 import com.refactor.observerpattern.observer.ReapingMachineObserver;
 import com.refactor.observerpattern.observer.SeedingMachineObserver;
 import com.refactor.observerpattern.observer.WateringMachineObserver;
+
+import java.util.Arrays;
+import java.util.List;
 
 public class WeatherData {
     private final SeedingMachine seedingMachine;
@@ -16,9 +20,13 @@ public class WeatherData {
     }
 
     public void measurementsChanged(int temp, int humidity, int windPower) {
-        new SeedingMachineObserver(seedingMachine).start(temp);
-        new ReapingMachineObserver(reapingMachine).start(temp, humidity);
-        new WateringMachineObserver(wateringMachine).start(temp, humidity, windPower);
+        SeedingMachineObserver seedingMachineObserver = new SeedingMachineObserver(seedingMachine);
+        ReapingMachineObserver reapingMachineObserver = new ReapingMachineObserver(reapingMachine);
+        WateringMachineObserver wateringMachineObserver = new WateringMachineObserver(wateringMachine);
+
+        List<IMachineObserver> machineObservers = Arrays.asList(seedingMachineObserver, reapingMachineObserver, wateringMachineObserver);
+
+        machineObservers.forEach(o -> o.update(temp, humidity, windPower));
     }
 
 }
