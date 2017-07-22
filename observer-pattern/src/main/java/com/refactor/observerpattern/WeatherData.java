@@ -1,20 +1,25 @@
 package com.refactor.observerpattern;
 
-import com.refactor.observerpattern.observer.IMachineObserver;
-
-import java.util.ArrayList;
-import java.util.List;
-
 public class WeatherData {
-    private final List<IMachineObserver> machineObservers = new ArrayList<>();
+    private final SeedingMachine seedingMachine;
+    private final ReapingMachine reapingMachine;
+    private final WateringMachine wateringMachine;
 
-
-    public void subscribe(IMachineObserver observer) {
-        this.machineObservers.add(observer);
+    public WeatherData(SeedingMachine seedingMachine, ReapingMachine reapingMachine, WateringMachine wateringMachine) {
+        this.seedingMachine = seedingMachine;
+        this.reapingMachine = reapingMachine;
+        this.wateringMachine = wateringMachine;
     }
 
     public void measurementsChanged(int temp, int humidity, int windPower) {
-        machineObservers.forEach(o -> o.update(temp, humidity, windPower));
-    }
+        if (temp > 5) {
+            seedingMachine.Start();
 
+            if (humidity > 65)
+                reapingMachine.Start();
+        }
+
+        if (temp > 10 && humidity < 55 && windPower < 4)
+            wateringMachine.Start();
+    }
 }

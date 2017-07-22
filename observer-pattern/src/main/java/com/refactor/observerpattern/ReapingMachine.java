@@ -7,7 +7,7 @@ public class ReapingMachine {
         return status;
     }
 
-    public void start() {
+    public void Start() {
         this.status = true;
     }
 }
