@@ -1,5 +1,9 @@
 package com.refactor.observerpattern;
 
+import com.refactor.observerpattern.observer.ReapingMachineObserver;
+import com.refactor.observerpattern.observer.SeedingMachineObserver;
+import com.refactor.observerpattern.observer.WateringMachineObserver;
+
 public class WeatherData {
     private final SeedingMachine seedingMachine;
     private final ReapingMachine reapingMachine;
@@ -12,14 +16,9 @@ public class WeatherData {
     }
 
     public void measurementsChanged(int temp, int humidity, int windPower) {
-        if (temp > 5) {
-            seedingMachine.Start();
-
-            if (humidity > 65)
-                reapingMachine.Start();
-        }
-
-        if (temp > 10 && humidity < 55 && windPower < 4)
-            wateringMachine.Start();
+        new SeedingMachineObserver(seedingMachine).start(temp);
+        new ReapingMachineObserver(reapingMachine).start(temp, humidity);
+        new WateringMachineObserver(wateringMachine).start(temp, humidity, windPower);
     }
+
 }

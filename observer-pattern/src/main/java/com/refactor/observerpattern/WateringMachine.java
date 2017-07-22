@@ -8,7 +8,7 @@ public class WateringMachine {
         return status;
     }
 
-    public void Start() {
+    public void start() {
         this.status = true;
     }
 }
