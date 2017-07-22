@@ -6,23 +6,23 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class RemoteControl {
-    private final Map<Integer, ICommand> onCommands = new HashMap<>();
-    private final Map<Integer, ICommand> offCommands = new HashMap<>();
+    private final Map<SlotType, ICommand> onCommands = new HashMap<>();
+    private final Map<SlotType, ICommand> offCommands = new HashMap<>();
 
-    public ICommand setOffCommand(int key, ICommand command) {
+    public ICommand setOffCommand(SlotType key, ICommand command) {
         return this.offCommands.put(key, command);
     }
 
-    public void setOnCommand(int key, ICommand command) {
+    public void setOnCommand(SlotType key, ICommand command) {
         this.onCommands.put(key, command);
     }
 
 
-    public void on(int slot) {
+    public void on(SlotType slot) {
         this.onCommands.get(slot).execute();
     }
 
-    public void off(int slot) {
+    public void off(SlotType slot) {
         this.offCommands.get(slot).execute();
     }
 

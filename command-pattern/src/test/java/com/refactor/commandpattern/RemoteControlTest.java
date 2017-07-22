@@ -1,6 +1,7 @@
 package com.refactor.commandpattern;
 
 import com.refactor.commandpattern.Invoker.RemoteControl;
+import com.refactor.commandpattern.Invoker.SlotType;
 import com.refactor.commandpattern.command.*;
 import com.refactor.commandpattern.receiver.Ceiling;
 import com.refactor.commandpattern.receiver.CeilingSpeed;
@@ -8,19 +9,17 @@ import com.refactor.commandpattern.receiver.Light;
 import com.refactor.commandpattern.receiver.Stereo;
 import org.junit.Test;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.*;
 
 public class RemoteControlTest {
     @Test
     public void should_turn_on_light_when_press_first_on_button() {
         Light light = new Light();
         RemoteControl remoteControl = new RemoteControl();
-        remoteControl.setOnCommand(1, new LightOnCommand(light));
-        remoteControl.setOffCommand(1, new LightOffCommand(light));
+        remoteControl.setOnCommand(SlotType.LIGHT, new LightOnCommand(light));
+        remoteControl.setOffCommand(SlotType.LIGHT, new LightOffCommand(light));
 
-        remoteControl.on(1);
+        remoteControl.on(SlotType.LIGHT);
 
         assertTrue(light.status());
     }
@@ -30,10 +29,10 @@ public class RemoteControlTest {
     public void should_turn_off_light_when_press_first_off_button() {
         Light light = new Light();
         RemoteControl remoteControl = new RemoteControl();
-        remoteControl.setOnCommand(1, new LightOnCommand(light));
-        remoteControl.setOffCommand(1, new LightOffCommand(light));
+        remoteControl.setOnCommand(SlotType.LIGHT, new LightOnCommand(light));
+        remoteControl.setOffCommand(SlotType.LIGHT, new LightOffCommand(light));
 
-        remoteControl.off(1);
+        remoteControl.off(SlotType.LIGHT);
 
         assertFalse(light.status());
     }
@@ -42,10 +41,10 @@ public class RemoteControlTest {
     public void should_turn_on_ceiling_when_press_second_on_button() {
         Ceiling ceiling = new Ceiling();
         RemoteControl remoteControl = new RemoteControl();
-        remoteControl.setOnCommand(2, new CeilingHighCommand(ceiling));
-        remoteControl.setOffCommand(2, new CeilingOffCommand(ceiling));
+        remoteControl.setOnCommand(SlotType.CEILING, new CeilingHighCommand(ceiling));
+        remoteControl.setOffCommand(SlotType.CEILING, new CeilingOffCommand(ceiling));
 
-        remoteControl.on(2);
+        remoteControl.on(SlotType.CEILING);
 
         assertEquals(CeilingSpeed.High, ceiling.getSpeed());
     }
@@ -56,10 +55,10 @@ public class RemoteControlTest {
     public void should_turn_off_ceiling_when_press_second_off_button() {
         Ceiling ceiling = new Ceiling();
         RemoteControl remoteControl = new RemoteControl();
-        remoteControl.setOnCommand(2, new CeilingHighCommand(ceiling));
-        remoteControl.setOffCommand(2, new CeilingOffCommand(ceiling));
+        remoteControl.setOnCommand(SlotType.CEILING, new CeilingHighCommand(ceiling));
+        remoteControl.setOffCommand(SlotType.CEILING, new CeilingOffCommand(ceiling));
 
-        remoteControl.off(2);
+        remoteControl.off(SlotType.CEILING);
 
         assertEquals(CeilingSpeed.Off, ceiling.getSpeed());
     }
@@ -68,10 +67,10 @@ public class RemoteControlTest {
     public void should_turn_on_stereo_when_press_third_on_button() {
         Stereo stereo = new Stereo();
         RemoteControl remoteControl = new RemoteControl();
-        remoteControl.setOnCommand(3, new StereoOnCommand(stereo));
-        remoteControl.setOffCommand(3, new StereoOffCommand(stereo));
+        remoteControl.setOnCommand(SlotType.STEREO, new StereoOnCommand(stereo));
+        remoteControl.setOffCommand(SlotType.STEREO, new StereoOffCommand(stereo));
 
-        remoteControl.on(3);
+        remoteControl.on(SlotType.STEREO);
 
         assertTrue(stereo.getStereoStatus());
         assertTrue(stereo.getCdStatus());
@@ -82,10 +81,10 @@ public class RemoteControlTest {
     public void should_turn_off_stereo_when_press_third_off_button() {
         Stereo stereo = new Stereo();
         RemoteControl remoteControl = new RemoteControl();
-        remoteControl.setOnCommand(3, new StereoOnCommand(stereo));
+        remoteControl.setOnCommand(SlotType.STEREO, new StereoOnCommand(stereo));
 
-        remoteControl.setOffCommand(3, new StereoOffCommand(stereo));
-        remoteControl.off(3);
+        remoteControl.setOffCommand(SlotType.STEREO, new StereoOffCommand(stereo));
+        remoteControl.off(SlotType.STEREO);
 
         assertFalse(stereo.getCdStatus());
         assertFalse(stereo.getCdStatus());
