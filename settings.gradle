@@ -3,4 +3,5 @@ include 'command-pattern'
 include 'observer-pattern'
 include 'composing-methods'
 include 'simplifying-conditional-expressions'
+include 'longer'
 
