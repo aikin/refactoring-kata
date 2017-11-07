@@ -4,5 +4,5 @@ include 'observer-pattern'
 include 'composing-methods'
 include 'simplifying-conditional-expressions'
 include 'longer'
-include 'MovingFeaturesBetweenObjects'
+include 'moving-features-between-objects'
 
