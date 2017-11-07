@@ -5,4 +5,5 @@ include 'composing-methods'
 include 'simplifying-conditional-expressions'
 include 'longer'
 include 'moving-features-between-objects'
+include 'visitor-pattern'
 
