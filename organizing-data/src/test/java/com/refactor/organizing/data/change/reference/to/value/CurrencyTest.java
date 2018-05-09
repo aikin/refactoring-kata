@@ -13,6 +13,6 @@ public class CurrencyTest {
 
         assertEquals(usdCurrency1.getCode(), usdCurrency2.getCode());
         // Should Pass
-//            Assert.Equal(usdCurrency1, usdCurrency2);
+//            assertEquals(usdCurrency1, usdCurrency2);
     }
 }
