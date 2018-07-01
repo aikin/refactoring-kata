@@ -1,5 +1,7 @@
 package com.refactor.composing.methods;
 
+import com.refactor.composing.methods.model.Order;
+
 public class InlineTemp {
     private final Order order;
 

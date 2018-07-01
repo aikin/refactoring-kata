@@ -1,5 +1,7 @@
 package com.refactor.composing.methods;
 
+import com.refactor.composing.methods.model.Order;
+
 import java.util.List;
 
 public class ExtractMethod {

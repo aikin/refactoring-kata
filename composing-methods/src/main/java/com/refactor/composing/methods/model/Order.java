@@ -1,4 +1,4 @@
-package com.refactor.composing.methods;
+package com.refactor.composing.methods.model;
 
 public class Order {
     private final double amount;

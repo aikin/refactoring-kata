@@ -1,5 +1,6 @@
 package com.refactor.composing.methods;
 
+import com.refactor.composing.methods.model.Order;
 import org.junit.Test;
 
 import java.util.Arrays;
