@@ -4,7 +4,7 @@ import org.junit.Test;
 
 import static org.junit.Assert.assertEquals;
 
-public class ReplaceDataValueWithObjectFact {
+public class ReplaceDataValueWithObjectTest {
     @Test
     public void should_get_M_code_given_is_male() {
         Male male = new Male();
