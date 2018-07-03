@@ -1,6 +1,6 @@
 package me.aikin.refactoring.organizing.data.encapsulate.collection;
 
-import me.aikin.refactoring.organizing.data.encapsulate.collection.encapsulate.arrays.SkillManager;
+import me.aikin.refactoring.organizing.data.encapsulate.collection.arrays.SkillManager;
 import org.junit.Test;
 
 import java.util.ArrayList;
