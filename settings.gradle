@@ -1,12 +1,13 @@
 rootProject.name = 'java-refactor-training'
-include 'command-pattern'
-include 'observer-pattern'
+include 'refactor-to-pattern:command-pattern',
+        'refactor-to-pattern:observer-pattern',
+        'refactor-to-pattern:visitor-pattern',
+        'refactor-to-pattern:decorator-pattern',
+        'refactor-to-pattern:state-pattern'
+
 include 'composing-methods'
 include 'simplifying-conditional-expressions'
 include 'longer'
 include 'moving-features-between-objects'
-include 'visitor-pattern'
-include 'decorator-pattern'
-include 'state-pattern'
 include 'organizing-data'
 
