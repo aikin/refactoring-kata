@@ -1,6 +1,6 @@
-## Java Refactor Training
+## Refactoring Kata
 
-[![Build Status](https://travis-ci.org/aikin/java-refactor-training.svg?branch=master)](https://travis-ci.org/aikin/java-refactor-training)
+[![Build Status](https://travis-ci.org/aikin/refactoring-kata.svg?branch=master)](https://travis-ci.org/aikin/refactoring-kata)
 
 
 提高代码品味，写出逻辑简单好理解的代码。
