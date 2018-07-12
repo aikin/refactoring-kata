@@ -7,7 +7,7 @@ import static org.junit.Assert.assertEquals;
 public class ContactCalculatorTest {
     @Test
     public void should_get_contact_name() {
-        ContactCalculator contactCalculator = new ContactCalculator();
+        ContactGenerator contactCalculator = new ContactGenerator();
         assertEquals("Kent", contactCalculator.getContact());
     }
 
