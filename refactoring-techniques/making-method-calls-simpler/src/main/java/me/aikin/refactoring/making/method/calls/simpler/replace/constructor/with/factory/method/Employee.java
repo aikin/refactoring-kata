@@ -1,4 +1,4 @@
-package me.aikin.refactoring.making.method.calls.simpler.replace.constructorwith.factory.method;
+package me.aikin.refactoring.making.method.calls.simpler.replace.constructor.with.factory.method;
 
 public class Employee {
     private int _type;
