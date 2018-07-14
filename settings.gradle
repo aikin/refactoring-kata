@@ -6,7 +6,7 @@ include 'refactoring-techniques:composing-methods',
         'refactoring-techniques:simplifying-conditional-expressions',
         'refactoring-techniques:longer',
         'refactoring-techniques:dealing-with-generalization',
-        'refactoring-techniques:making-method-calls-simpler'
+        'refactoring-techniques:simplifying-method-calls'
 
 include 'refactoring-to-patterns:command-pattern',
         'refactoring-to-patterns:observer-pattern',
