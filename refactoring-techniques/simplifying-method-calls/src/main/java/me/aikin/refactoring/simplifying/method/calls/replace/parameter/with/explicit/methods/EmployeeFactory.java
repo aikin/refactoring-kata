@@ -5,14 +5,14 @@ public class EmployeeFactory {
     private final static int salesman = 1;
     private final static int manager = 2;
 
-    public static me.aikin.refactoring.making.method.calls.simpler.replace.parameter.with.explicit.methods.Employee create(int type) {
+    public static Employee create(int type) {
         switch (type) {
             case engineer:
-                return new me.aikin.refactoring.making.method.calls.simpler.replace.parameter.with.explicit.methods.Engineer();
+                return new Engineer();
             case salesman:
-                return new me.aikin.refactoring.making.method.calls.simpler.replace.parameter.with.explicit.methods.Salesman();
+                return new Salesman();
             case manager:
-                return new me.aikin.refactoring.making.method.calls.simpler.replace.parameter.with.explicit.methods.Manager();
+                return new Manager();
             default:
                 throw new RuntimeException("Incorrect type code value");
         }
