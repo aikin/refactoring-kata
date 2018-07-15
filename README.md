@@ -13,7 +13,15 @@
     - [在对象之间搬移特性](./refactoring-techniques/moving-features-between-objects/README.md)
     - [重新组织数据](./refactoring-techniques/organizing-data/README.md) 
     - [简化条件表达式](./refactoring-techniques/simplifying-conditional-expressions/README.md)
-    - [](#持续集成/持续交付架构图)
+    - [处理概况关系](./refactoring-techniques/dealing-with-generalization/README.md)
+    - [简化函数调用](./refactoring-techniques/simplifying-method-calls/README.md)
+- [重构到模式](./refactoring-to-patterns/README.md)
+    - [命令模式](./refactoring-to-patterns/command-pattern/README.md)
+    - [装饰模式](./refactoring-to-patterns/decorator-pattern/README.md)
+    - [观察者模式](./refactoring-to-patterns/observer-pattern/README.md) 
+    - [状态模式](./refactoring-to-patterns/state-pattern/README.md)
+    - [访问者模式](./refactoring-to-patterns/visitor-pattern/README.md)    
+    
     
 ## TODO
 ---------
