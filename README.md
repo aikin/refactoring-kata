@@ -26,5 +26,6 @@
 - [ ] 代码坏味道
 
 ## 参考
-*《重构 - 改善既有代码的设计》
-    
+* 《重构 - 改善既有代码的设计》
+* [Refactoring.Guru](https://refactoring.guru/)
+     
